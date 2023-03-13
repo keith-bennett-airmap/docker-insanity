@@ -1,0 +1,18 @@
+
+version: '3.9'
+
+services:
+  insanity_a:
+    image: "insanity_a:${GIT_SHA}"
+    build:
+      context: a
+      args:
+        GIT_SHA: "${GIT_SHA}"
+  insanity_b:
+    image: "insanity_b:${GIT_SHA}"
+    build:
+      context: b
+      args:
+        INSANITY_A_VERSION: "${GIT_SHA}"
+    depends_on:
+      - insanity_a

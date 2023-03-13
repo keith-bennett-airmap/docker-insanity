@@ -1,4 +1,4 @@
-ARG DEP_A_HASH
-FROM insanity_a:${DEP_A_HASH}
+ARG INSANITY_A_VERSION
+FROM insanity_a:${INSANITY_A_VERSION}
 
 RUN echo "hello world from B"
