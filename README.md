@@ -42,3 +42,11 @@ Case 5 uses BuildKit via `docker buildx build`. Importantly **macOS must use
 Note Docker BuildKit _can_ see previous images if using `docker build` instead
 of `docker buildx build`. I'm not sure how to explicitly enable that behavior
 for `docker buildx build` or for `docker compose`.
+
+|                                 | Linux                    | macOS                    |
+| ------------------------------- | ------------------------ | ------------------------ |
+| Case 1 (`build` w/o BuildKit)   | :heavy_check_mark:       | :heavy_check_mark:       |
+| Case 2 (`compose` w/o BuildKit) | :heavy_check_mark:       | :heavy_check_mark:       |
+| Case 3 (`build` w/ BuildKit)    | :heavy_check_mark:       | :x:                      |
+| Case 4 (`buildx`)               | :x: (`insanity_b` fails) | :x: (`insanity_a` fails) |
+| Case 5 (`compose` w/ BuildKit)  | :x:                      | :heavy_check_mark:       |

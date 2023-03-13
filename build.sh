@@ -50,8 +50,8 @@ echo "
 "
 export DOCKER_BUILDKIT=1
 remove_cache
-docker build --load --build-arg GIT_SHA="${GIT_SHA}" --tag "insanity_a:${GIT_SHA}" a/
-docker build --load --build-arg INSANITY_A_VERSION="${GIT_SHA}" --tag "insanity_b:${GIT_SHA}" b/
+docker build --build-arg GIT_SHA="${GIT_SHA}" --tag "insanity_a:${GIT_SHA}" a/
+docker build --build-arg INSANITY_A_VERSION="${GIT_SHA}" --tag "insanity_b:${GIT_SHA}" b/
 
 echo "
 ################################################################################
