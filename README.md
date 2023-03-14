@@ -47,6 +47,6 @@ for `docker buildx build` or for `docker compose`.
 | ------------------------------- | ------------------------ | ------------------------ |
 | Case 1 (`build` w/o BuildKit)   | :heavy_check_mark:       | :heavy_check_mark:       |
 | Case 2 (`compose` w/o BuildKit) | :heavy_check_mark:       | :heavy_check_mark:       |
-| Case 3 (`build` w/ BuildKit)    | :heavy_check_mark:       | :x:                      |
+| Case 3 (`build` w/ BuildKit)    | :heavy_check_mark:       | :heavy_check_mark:       |
 | Case 4 (`buildx`)               | :x: (`insanity_b` fails) | :x: (`insanity_a` fails) |
 | Case 5 (`compose` w/ BuildKit)  | :x:                      | :heavy_check_mark:       |
