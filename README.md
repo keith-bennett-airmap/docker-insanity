@@ -38,6 +38,11 @@ must use BuildKit**.
 Case 5 uses BuildKit via `docker buildx build`. Importantly **macOS must use
 `docker buildx`**.
 
+# Case 6
+Case 6 uses BuildKit via `docker buildx build` and tries to load the image into
+the build container using `--cache-from` from [this blog](https://lipanski.com/posts/speed-up-your-docker-builds-with-cache-from).
+Unfortunately the flag [is not well documented by Docker's own documentation](https://docs.docker.com/engine/reference/commandline/buildx_build/#cache-from).
+
 # Summary
 Note Docker BuildKit _can_ see previous images if using `docker build` instead
 of `docker buildx build`. I'm not sure how to explicitly enable that behavior
@@ -50,3 +55,4 @@ for `docker buildx build` or for `docker compose`.
 | Case 3 (`build` w/ BuildKit)    | :heavy_check_mark:       | :heavy_check_mark:       |
 | Case 4 (`buildx`)               | :x: (`insanity_b` fails) | :x: (`insanity_a` fails) |
 | Case 5 (`compose` w/ BuildKit)  | :x:                      | :heavy_check_mark:       |
+| Case 5 (`compose` w/ BuildKit)  | :x:                      | :question:               |
